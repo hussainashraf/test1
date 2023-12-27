@@ -41,7 +41,6 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.align_ai"
         minSdkVersion 21
         targetSdkVersion 28
@@ -49,10 +48,16 @@ android {
         versionName flutterVersionName
     }
 
+    configurations {
+        all {
+            resolutionStrategy {
+                force 'com.android.tools.build:gradle:3.5.4'
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
         }
     }
